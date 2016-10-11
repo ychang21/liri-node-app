@@ -1,10 +1,10 @@
 # liri-node-app
 
 #This is a command line node app that takes in the following commands: 
-	#my-tweets
-	#spotify-this-song
-	#movie-this
-	#do-what-it-says
+	my-tweets
+	spotify-this-song
+	movie-this
+	do-what-it-says
 
 #Each command will display the information requested by the user.
 
