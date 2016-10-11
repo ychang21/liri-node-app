@@ -79,13 +79,13 @@ function song() {
                 return;
             } 
             fs.appendFile('log.txt', commands + "\n");
-            for (var i=0; i<data.tracks.items.length; i++) {
-            // songStuff = data.tracks.items[0];
-            songStuff = data.tracks.items[i];
+            // for (var i=0; i<data.tracks.items.length; i++) {
+            songStuff = data.tracks.items[0];
+            // songStuff = data.tracks.items[i];
             songInfo = "Artist: " + songStuff.artists[0].name + "\n" + "Song: " + songStuff.name + "\n" + "Album: " + songStuff.album.name + "\n" + "Preview link: " + songStuff.preview_url + "\n";
             console.log(songInfo);
             fs.appendFile('log.txt', songInfo + "\n");
-            }
+            // }
             console.log("Song information has been added to log.txt");
         });
 };
