@@ -43,6 +43,7 @@ function tweets() {
                 console.log(tweets[i].created_at + ": " + tweets[i].text);
                 console.log("------------------------------");
                 // fs.appendFile('log.txt', commands + "\n" + tweets[i].created_at + ": " + tweets[i].text + "\n");
+                //appending to log.txt
                 fs.appendFile('log.txt', tweets[i].created_at + ": " + tweets[i].text + "\n");
             }
         console.log("Tweets have been added to log.txt");
@@ -52,6 +53,7 @@ function tweets() {
 
 //spotify function
 function song() {
+	//getting user input
     for (var i=3; i<value.length; i++){
         if (i>3 && i< value.length){
             songTitle = songTitle + "+" + value[i];
@@ -60,6 +62,7 @@ function song() {
             songTitle = songTitle + value[i];
         }
     }
+    //default if no song is listed by user
     if (!songTitle) {
         // songTitle = "The Sign by Ace of Base";
         songTitle = "The Sign";
@@ -67,6 +70,7 @@ function song() {
             songStuff = data.tracks.items[6];
             songInfo = "Artist: " + songStuff.artists[0].name + "\n" + "Song: " + songStuff.name + "\n" + "Album: " + songStuff.album.name + "\n" + "Preview link: " + songStuff.preview_url + "\n";
             console.log(songInfo);
+            //appending to log.txt
             fs.appendFile('log.txt', commands + "\n" + songInfo + "\n");
             console.log("'The Sign' by Ace of Base song information has been added to log.txt");
         });
@@ -84,6 +88,7 @@ function song() {
             // songStuff = data.tracks.items[i];
             songInfo = "Artist: " + songStuff.artists[0].name + "\n" + "Song: " + songStuff.name + "\n" + "Album: " + songStuff.album.name + "\n" + "Preview link: " + songStuff.preview_url + "\n";
             console.log(songInfo);
+            //appending to log.txt
             fs.appendFile('log.txt', songInfo + "\n");
             // }
             console.log("Song information has been added to log.txt");
@@ -92,6 +97,7 @@ function song() {
 
 //omdb function
 function movie() {
+	//getting user input
     for (var i=3; i<value.length; i++){
         if (i>3 && i< value.length){
             movieTitle = movieTitle + "+" + value[i];
@@ -100,6 +106,7 @@ function movie() {
             movieTitle = movieTitle + value[i];
         }
     }
+    //default if no user input
     if (!movieTitle) {
     movieTitle = "Mr. Nobody";
     }
@@ -117,6 +124,7 @@ function movie() {
                     "Rotten Tomatoes Rating: " + JSON.parse(body).tomatoRating + "\n" +
                     "Rotten Tomatoes URL: " + JSON.parse(body).tomatoURL + "\n";
         console.log(movieInfo);
+        //appending to log.txt
         fs.appendFile('log.txt', commands + "\n" + movieInfo + "\n");
         console.log("Movie information has been added to log.txt");
     }
